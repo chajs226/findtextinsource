@@ -59,26 +59,9 @@ def writecsv(foundList, target):
 
 # 검색할 파일 리스트 찾기
 csFileList = search(sys.argv[1])
-#csFileList 에서 문자열 찾기
-# findtext(csFileList,"(외국인등록번호)")
-# findtext(csFileList,"(외국인 등록번호)")
-# findtext(csFileList,"(외국인등록 번호)")
-# findtext(csFileList,"(주민번호)")
-# findtext(csFileList,"(주민 번호)")
-# findtext(csFileList,"(주민등록번호)")
-# findtext(csFileList,"(주민등록 번호)")
-# findtext(csFileList,"(주민 등록번호)")
-# findtext(csFileList,"(주민 등록 번호)")
-# findtext(csFileList,"(여권번호)")
-# findtext(csFileList,"(여권 번호)")
-# findtext(csFileList,"(운전면허 번호)")
-# findtext(csFileList,"(운전 면허번호)")
-# findtext(csFileList,"(운전면허번호)")
-# findtext(csFileList,"(운전 면허 번호)")
-# findtext(csFileList,"SimplePrint")
-findtext(csFileList,"PrintDialog")
-# findtext(csFileList,"PrintPreview")
-findtext(csFileList,"ExportToXlsx")
-findtext(csFileList,"ExportToXls")
-
-#testparsing(csFileList)
+# argument로 받은 문자열 검색
+if (len(sys.argv) > 2):
+	for i in range(2, len(sys.argv), 1):		
+		findtext(csFileList,sys.argv[i])
+else:
+	print("usage : python textsearch.py \"경로\" \"찾을 문자\" \"찾을 문자\" ...")
